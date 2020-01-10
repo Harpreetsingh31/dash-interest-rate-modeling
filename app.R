@@ -56,12 +56,12 @@ if (appName != ""){
 }
 
 #Loading/Cleaning/Formatting of the libor_data
-COPY = filteri(read.csv('Data/usd.csv'))
-COPY2 = filteri(read.csv('Data/cad.csv'))
+COPY = filteri(read.csv('Data/usd.csv')) #usdrates
+COPY2 = filteri(read.csv('Data/cad.csv')) #cadrates
+
 #Dataframes below were generated using function "vas"
 #simulation takes time, and might causes errors during run
 #that is why it was pre_done.
-
 sim1 = read.csv("Data/ussim.csv")
 sim2 = read.csv("Data/cdsim.csv")
 pms1 = read.csv("Data/uspms.csv")
