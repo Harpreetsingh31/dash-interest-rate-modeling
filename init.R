@@ -1,0 +1,16 @@
+
+# R script to run author supplied code, typically used to install additional R packages
+# contains placeholders which are inserted by the compile script
+# NOTE: this script is executed in the chroot context; check paths!
+
+r <- getOption("repos")
+r["CRAN"] <- "http://cloud.r-project.org"
+options(repos=r)
+
+remotes::install_github("plotly/dash-html-components")
+remotes::install_github("plotly/dash-core-components")
+remotes::install_github("plotly/dash-table")
+remotes::install_github("plotly/dashR")
+
+install.packages(c("plotly","stringr", "generator", "random","ggplot2","ggthemes","reshape2","stats",
+                   "fitdistrplus","ggfortify","tseries","rmutil","zoo","CDFt","dplyr","lawstat","goft"))
