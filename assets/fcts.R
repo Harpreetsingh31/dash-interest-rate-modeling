@@ -461,7 +461,7 @@ pams = function(shift_Day,n)
   
   params[,c(2:6)] = apply(params[,c(2:6)],2,function(x) round(x, 2))
   
-  cnames = c('<b>Parameters</b>', '<b>Norm</b>','<b>LgNorm</b>','<b>Gamma</b>','<b>Laplace/b>','<b>t</b>')
+  cnames = c('<b>Parameters</b>', '<b>Norm</b>','<b>LgNorm</b>','<b>Gamma</b>','<b>Laplace</b>','<b>t</b>')
   rnames = c('<b>mu/df/shape</b>','<b>sd/rate</b>','<b>aic</b>', '<b>bic</b>', '<b>loglik</b>', '<b>Ks_test</b>')
   datamatrx = as.matrix(params[,-which(names(params) == "Parameters")])
   
