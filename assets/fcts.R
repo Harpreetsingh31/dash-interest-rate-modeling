@@ -595,20 +595,29 @@ dist = function(shift_Day, bins, n,diff)
                     rmutil::dlaplace(x, m = m, s = t))
     names(data)=c('x','lnorm','norm','t','gamma','laplace')
     
+    #This way hover has correct names rather_than data$x
+    Shifted_rate = data$x
+    Norm = data$norm
+    LogNorm = data$lnorm
+    student_t = data$t
+    Laplace = data$laplace
+    Gamma = data$gamma
+    
     g <- ggplot(shift_Day) +
       geom_histogram(aes(x = shift_Day[,n], y = ..density..),
                      bins=bins, fill = "white", color = "#7fafdf")+
-      geom_line(data=data,aes(x=data$x,y=data$lnorm,color='Normal')) +
-      geom_line(data=data,aes(x=data$x,y=data$norm,color='LogNorm')) +
-      geom_line(data=data,aes(x=data$x,y=data$t,color='t')) +
-      geom_line(data=data,aes(x=data$x,y=data$laplace,color='Laplace')) +
-      geom_line(data=data,aes(x=data$x,y=data$gamma,color='Gamma')) +
+      geom_line(data=data,aes(x=Shifted_rate,y=Norm,color='Normal')) +
+      geom_line(data=data,aes(x=Shifted_rate,y=LogNorm,color='LogNorm')) +
+      geom_line(data=data,aes(x=Shifted_rate,y=student_t,color='t')) +
+      geom_line(data=data,aes(x=Shifted_rate,y=Laplace,color='Laplace')) +
+      geom_line(data=data,aes(x=Shifted_rate,y=Gamma,color='Gamma')) +
       geom_rug(aes(x = shift_Day[,n], y = 0), position = position_jitter(height = 0))+
       labs(x=n, y="Density", title="Distribution")+
       theme_light()+
       theme(plot.title = element_text(size = 12, face = "bold",hjust = 0.5))+
       geom_vline(aes(xintercept=mean(shift_Day[,n])),
                  color="#2b608a", linetype="dashed", size=0.5)
+    
     g <- ggplotly(g)
     return(g)
   }
