@@ -3,20 +3,6 @@ gc() # Garbage collection
 assign("last.warning", NULL, envir = baseenv()) # Reset list of past warnings
 
 source("assets/fcts.R")
-A#devtools::install_github("jcizel/FredR")
-#library("FredR")
-library(dash)
-library(dashCoreComponents)
-library(dashHtmlComponents)
-library(dashTable)
-library(plotly)
-library(ggplot2)# For plottingrm(list = ls(all = TRUE))# Remove all previous objects
-gc() # Garbage collection
-assign("last.warning", NULL, envir = baseenv()) # Reset list of past warnings
-
-source("assets/fcts.R")
-A#devtools::install_github("jcizel/FredR")
-#library("FredR")
 library(dash)
 library(dashCoreComponents)
 library(dashHtmlComponents)
@@ -32,16 +18,17 @@ library(tseries)
 library(rmutil) #for laplace
 library(stats) #for norm,lnorm,t
 library(zoo)
-library("CDFt")
-library("dplyr")
-library("lawstat")
-library("goft")
-#library("SMFI5") #for vasicek
+library(CDFt)
+library(dplyr)
+library(lawstat)
+library(goft)
+#devtools::install_github("jcizel/FredR")
+#library("FredR")
+#library(SMFI5) #for vasicek
 
 
 # Getting the data from FredR, for US and CAD
-
-#Activation key would needed
+#Activation key can be obtained by creating login id with fredlouis
 #fred <- FredR("dd#ed#f##ae#ca##b#bd##ab#c######")
 #ids = c("1MTD156N","2MTD156N","3MTD156N","4MTD156N","5MTD156N","6MTD156N",
 # "7MTD156N","8MTD156N","9MTD156N","10MD156N","11MD156N","12MD156N")
@@ -78,16 +65,15 @@ sim2 = read.csv("Data/cdsim.csv",check.names=FALSE)
 pms1 = read.csv("Data/uspms.csv",check.names=FALSE)
 pms2 = read.csv("Data/cdpms.csv",check.names=FALSE)
 
-#https://dash.plot.ly/dash-daq/colorpicker
-
 app <- Dash$new()
 
 #font_and_background_colors
+#https://dash.plot.ly/dash-daq/colorpicker
 ft_colr = "#7fafdf" 
 bg_colr = "#286494"
 bg_colr_dark = "#1a4e78"
 
-#this provides space between components
+#space between components
 space_line = htmlDiv(list(
   htmlHr(style = list(width = '100%','border-bottom'= '10px solid #286494'))
 ))
@@ -156,7 +142,7 @@ app$layout(
   
   space_line,
   
-  #Tabs or currency swapping
+  #Tabs for currency swapping
   htmlDiv(list(
     dccTabs(id="tab",value = "usd", children=list(
       dccTab(label='USD',value = "usd",style=tab_style, selected_style=tab_selected_style),
