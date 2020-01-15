@@ -1,18 +1,18 @@
 # dash-interest-rate-modeling
-This dashapp is built only in R, it's very simple to understand and quick to adapt from. 
-All the graphs/tables shown are generated using functions in fcts.R file.
-app.R file has the layout and the callback functions.
 
-Libraries that would needed to be installed are in the file called 'init.R'
+## About this app:
+This R app lets you perform various data analytical operations on the historical interest rate data.
 
-Interesting plots:
-3D-yield curve, (interest_rate)
-2D-line scatter plot,
-pie chart,
-correlation plot,
-distribution fitting curves,
-plotly tables,
-and some ggplots.
+we have three main .R files:
+- fcts.R (helper functions for callbacks)
+- app.R (app layout)
+- init.R (equired libaries)
+
+App Layout:
+- First, we have a tab to choose a currency (default USD).
+- Next, we have Table, 3D, 2D, and Pie chart to give overall picture of the dataset. 
+- Then, we have Dash_core_components: Date slider, Dropdown (for tenures/columns), Input (differencing), and a dropdown selector.
+- Finally, we have four modules of operations for processing, fitting, pca and vasicek simulation.
 
 Overall:
 ![animated](screenshot/screencaptured.gif)
@@ -25,4 +25,10 @@ Distribution Fitting
 
 PCA_Vasicek:
 ![animated](screenshot/pca_vas.gif)
+
+All the graphs/tables shown are generated using functions in fcts.R file.
+app.R file has the layout and the callback functions.
+
+Install the requirements:
+Libraries that would needed to be installed are in the file called 'init.R'
 
