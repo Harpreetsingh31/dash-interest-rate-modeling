@@ -23,5 +23,5 @@ This R app lets you perform various data analytical operations on the historical
 ## Distribution Fitting
 ![animated](screenshot/probs.gif)
 
-## PCA_Vasicek:
+## PCA_&_Vasicek:
 ![animated](screenshot/pca_vas.gif)
