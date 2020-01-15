@@ -34,14 +34,12 @@ library(goft)
 # "7MTD156N","8MTD156N","9MTD156N","10MD156N","11MD156N","12MD156N")
 #us <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[1],sep = "")))[,c("date","value")]
 #cd <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[1],sep = "")))[,c("date","value")]
-
 #for(i in c(1:11)){
 #usd <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[i+1],sep = "")))[,c("date","value")]
 #cad <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[i+1],sep = "")))[,c("date","value")]
 #us <- left_join(us, usd, by=c("date"))
 #cd <- left_join(cd, cad, by=c("date"))
 #}
-
 #write.csv(us, file = "usd.csv",row.names=FALSE)
 #write.csv(cd, file = "cad.csv",row.names=FALSE)
 
@@ -49,7 +47,6 @@ appName <- Sys.getenv("DASH_APP_NAME")
 
 if (appName != ""){
   pathPrefix <- sprintf("/%s/", appName)
-  
   Sys.setenv(DASH_ROUTES_PATHNAME_PREFIX = pathPrefix,
              DASH_REQUESTS_PATHNAME_PREFIX = pathPrefix)
 }
@@ -74,14 +71,9 @@ bg_colr = "#286494"
 bg_colr_dark = "#1a4e78"
 
 #space between components
-space_line = htmlDiv(list(
-  htmlHr(style = list(width = '100%','border-bottom'= '10px solid #286494'))
-))
-
+space_line = htmlDiv(list(htmlHr(style = list(width = '100%','border-bottom'= '10px solid #286494')) ))
 #thick white app_header line
-color_line = htmlDiv(list(
-  htmlHr(style = list(width = '100%','border-bottom'= '20px solid white'))
-))
+color_line = htmlDiv(list(htmlHr(style = list(width = '100%','border-bottom'= '20px solid white')) ))
 
 #styling tabs
 tab_style = list('border'= '1px solid #7fafdf','fontWeight'= 'bold')
@@ -97,27 +89,24 @@ mks = list(
   "2005" = list("label" = "2005", "style" = list("color" = "#7fafdf")),
   "2010" = list("label" = "2010", "style" = list("color" = "#7fafdf")),
   "2015" = list("label" = "2015", "style" = list("color" = "#7fafdf")),
-  "2020" = list("label" = "2020", "style" = list("color" = "#7fafdf"))
-)
+  "2020" = list("label" = "2020", "style" = list("color" = "#7fafdf")) )
 
 #label list for dropdown
 label_list = list(
   list("label" = "1 Month", "value" = "1_Mon"),list("label" = "2 Month", "value" = "2_Mon"),list("label" = "3 Month", "value" = "3_Mon"),
   list("label" = "4 Month", "value" = "4_Mon"),list("label" = "5 Month", "value" = "5_Mon"),list("label" = "6 Month", "value" = "6_Mon"),
   list("label" = "7 Month", "value" = "7_Mon"),list("label" = "8 Month", "value" = "8_Mon"),list("label" = "9 Month", "value" = "9_Mon"),
-  list("label" = "10 Month", "value" = "10_Mon"),list("label" = "11 Month", "value" = "11_Mon"),list("label" = "12 Month", "value" = "12_Mon"))
+  list("label" = "10 Month", "value" = "10_Mon"),list("label" = "11 Month", "value" = "11_Mon"),list("label" = "12 Month", "value" = "12_Mon") )
 
 
 #The main app_layout
 app$layout(
   
   space_line,
-  
   #APP_header
   htmlDiv(list(htmlH1("Interest rate modelling", style=list('fontSize'= 75,color = 'white',display='inline-block','float' = "left")),
                htmlImg(src= "assets/dash-logo-new.png", style=list(display='inline-block','float' = "right"))
   ),style = list(width = "96%",margin="auto")),
-  
   color_line,
   space_line,
   
