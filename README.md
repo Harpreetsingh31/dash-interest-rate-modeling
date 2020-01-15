@@ -1,9 +1,9 @@
 # dash-interest-rate-modeling
 
 ## About this app:
-This R app lets you perform various data analytical operations on the historical interest rate data.
+This R app lets you perform various data analytical operations on the historical interest rate datasets.
 
-## we have three main .R files:
+## We have three main .R files:
 - fcts.R (helper functions for callbacks)
 - app.R (mainly app layout)
 - init.R (required libaries)
