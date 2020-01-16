@@ -3,7 +3,7 @@
 ## About this app:
 This R app lets you perform various data analytical operations on the historical LIBOR_interest_rate datasets.
 
-## We have three main .R files:
+## There are three main .R files:
 - fcts.R (helper functions for callbacks)
 - app.R (mainly app layout)
 - init.R (required libaries)
