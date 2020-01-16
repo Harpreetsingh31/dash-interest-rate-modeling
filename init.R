@@ -7,6 +7,9 @@ r <- getOption("repos")
 r["CRAN"] <- "http://cloud.r-project.org"
 options(repos=r)
 
+# packages go here
+install.packages('remotes')
+
 remotes::install_github("plotly/dash-html-components")
 remotes::install_github("plotly/dash-core-components")
 remotes::install_github("plotly/dash-table")
