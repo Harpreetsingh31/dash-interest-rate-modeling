@@ -3,10 +3,12 @@
 ## About this app:
 This R app lets you perform various data analytical operations on the historical LIBOR_interest_rate datasets.
 
-## There are three main .R files:
+## There are four main files:
 - fcts.R (helper functions for callbacks)
 - app.R (mainly app layout)
 - init.R (required libaries)
+- style.css (styling largely done through dash itself,
+             css only used for bground,dropdown,input,and slider styling)
 
 ## App Layout:
 - First, we have a tab to choose a currency (default USD).
