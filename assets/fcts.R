@@ -1,3 +1,8 @@
+# Discription
+# j is list of tenures/columns selected by user (via dcc multi dropdown)
+# n is tenures/columns selected by user (via dcc single dropdown)
+# difference is number provided by user (via dcc input)
+
 filteri = function(Data)
   ### Basic Cleaning.
 {
@@ -15,6 +20,7 @@ filteri = function(Data)
 diff = function(COPY,difference,j)
   ### Differencing the data by day.
 {
+  #difference gives us the lag we want in our data (via dcc input)
   if (difference == 0){
     COPY$Date = as.Date(paste(COPY$Date), format = "%Y-%m-%d")
     
@@ -277,6 +283,7 @@ diff_plot = function(COPY,j)
   ### function generates a plotly 2d plot, for day_differenced and columnar subsetted data...
   ### This is flexible in turns of columns supplies as this approach is hardcoded by each column
 {
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   COPY$Date = as.Date(paste(COPY$Date), format = "%Y-%m-%d")
   mind = min(as.integer(format(COPY$Date,"%Y")))
   maxd = max(as.integer(format(COPY$Date,"%Y")))
@@ -361,6 +368,7 @@ autoco = function(Day)
 corrplot = function(COPY,j)
   ### function generates a correlation plot, for selected tenure data...
 {
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   my = names(COPY) %in% j
   COPY4 = cor(COPY[,my], use = "complete.obs")
   Correlation = as.matrix(COPY4)
@@ -381,6 +389,7 @@ corrplot = function(COPY,j)
 statis = function(shift_Day,j)
   ### function generates a plotly table of summary statistics, for selected tenures...
 {
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   library("lawstat")
   library("goft")
   library("fitdistrplus")
@@ -550,7 +559,7 @@ pamas = function(shift_Day,n,ds)
 }
 
 #distribution Plot
-dist = function(shift_Day, bins, n,diff)
+dist = function(shift_Day, bins, n,difference)
   ### function generates a plot of distributions fitted, for a selected tenure...
 {
   colls = list("Date"="white","1_Mon"="#003399","2_Mon"="#00ffff","3_Mon"="#5cf79c","4_Mon"="#D011FF","5_Mon"="#FF11E7",
@@ -558,7 +567,7 @@ dist = function(shift_Day, bins, n,diff)
                "11_Mon"="#469990","12_Mon"="#E8296A")
   
   #if differenciing is zero we don't do fitting, reason is visible from histogram
-  if (diff == 0){
+  if (difference == 0){
     p <- ggplot(shift_Day, aes(shift_Day[,n])) +
       geom_histogram(aes(y = ..density..), fill = "white", color = "#7fafdf") +
       geom_density(fill = colls[[n]], alpha = 0.5) +
@@ -678,7 +687,7 @@ pdist = function(shift_Day, bins, n)
 pca = function(Day,j)
   ### function generates a plot of Principle Components...
 {
-  
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   my = names(Day) %in% j
   n = length(j)
   #COPY4 = cor(COPY[,my], use = "complete.obs")
@@ -708,7 +717,7 @@ pca = function(Day,j)
 pca1 = function(Day,j)
   ### function generates a pca plot...
 {
-  
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   my = names(Day) %in% j
   n = length(j)
   Day = Day[,my]
@@ -739,6 +748,7 @@ pca1 = function(Day,j)
 vas = function(Day,j)
   ### function generates a vasicek plot...
 {
+  # j is list of tenures/columns selected by user (via dcc multi dropdown)
   row.has.na = apply(Day, 1, function(x){any(is.na(x))})
   Day= Day[!row.has.na,]
   X = Day$Date
