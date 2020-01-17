@@ -13,5 +13,5 @@ remotes::install_github("plotly/dash-html-components", dependencies=TRUE)
 remotes::install_github("plotly/dash-core-components", dependencies=TRUE)
 remotes::install_github("plotly/dash-table", dependencies=TRUE)
 remotes::install_github("plotly/dashR", dependencies=TRUE)
-#install.packages(c("plotly","ggplot2","ggthemes","reshape2","stats","fitdistrplus","ggfortify",
- #                  "tseries","rmutil","zoo","CDFt","dplyr","lawstat","goft"))
+install.packages(c("plotly","ggplot2","ggthemes","reshape2","stats","fitdistrplus","ggfortify",
+                   "tseries","rmutil","zoo","CDFt","dplyr","lawstat","goft"))
