@@ -3,45 +3,23 @@ gc() # Garbage collection
 assign("last.warning", NULL, envir = baseenv()) # Reset list of past warnings
 
 source("assets/fcts.R")
-library(dash)
-library(dashCoreComponents)
-library(dashHtmlComponents)
-library(dashTable)
-library(plotly)
-library(ggplot2)# For plotting
-library(ggthemes)
-library(reshape2)
-library(stats)
-library(fitdistrplus)
-library(ggfortify)
-library(tseries)
-library(rmutil) #for laplace
-library(stats) #for norm,lnorm,t
-library(zoo)
-library(CDFt)
-library(dplyr)
-library(lawstat)
-library(goft)
-#devtools::install_github("jcizel/FredR")
-#library("FredR")
-#library(SMFI5) #for vasicek
-
 
 # Getting the data from FredR, for US and CAD
+
 #Activation key can be obtained by creating login id with fredlouis
 #fred <- FredR("dd#ed#f##ae#ca##b#bd##ab#c######")
 #ids = c("1MTD156N","2MTD156N","3MTD156N","4MTD156N","5MTD156N","6MTD156N",
 # "7MTD156N","8MTD156N","9MTD156N","10MD156N","11MD156N","12MD156N")
-#us <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[1],sep = "")))[,c("date","value")]
-#cd <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[1],sep = "")))[,c("date","value")]
+#usd <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[1],sep = "")))[,c("date","value")]
+#cad <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[1],sep = "")))[,c("date","value")]
 #for(i in c(1:11)){
-#usd <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[i+1],sep = "")))[,c("date","value")]
-#cad <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[i+1],sep = "")))[,c("date","value")]
-#us <- left_join(us, usd, by=c("date"))
-#cd <- left_join(cd, cad, by=c("date"))
+#us <- as.data.frame(fred$series.observations(series_id = paste("USD",ids[i+1],sep = "")))[,c("date","value")]
+#cd <- as.data.frame(fred$series.observations(series_id = paste("CAD",ids[i+1],sep = "")))[,c("date","value")]
+#usd <- left_join(usd, us, by=c("date"))
+#cad <- left_join(cad, cd, by=c("date"))
 #}
-#write.csv(us, file = "usd.csv",row.names=FALSE)
-#write.csv(cd, file = "cad.csv",row.names=FALSE)
+#write.csv(us, file = "Data/usd.csv",row.names=FALSE)
+#write.csv(cd, file = "Data/cad.csv",row.names=FALSE)
 
 appName <- Sys.getenv("DASH_APP_NAME")
 
