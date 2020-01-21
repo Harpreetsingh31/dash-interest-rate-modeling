@@ -242,7 +242,7 @@ app$layout(
     ,space_line
       ), style = list('margin-top' = "50px")),
   
-  space,
+  space_line,
   htmlDiv(id='hidden-curr-div', style = list(display= 'none')), #for tabs
   htmlDiv(id='hidden-diff',style=list(display = 'none')), #for difference number input component
   htmlDiv(id='hidden-slider',style=list(display = 'none')), #for date slider
