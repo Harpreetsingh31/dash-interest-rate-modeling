@@ -3,6 +3,30 @@
 # n is tenures/columns selected by user (via dcc single dropdown)
 # difference is number provided by user (via dcc input)
 
+library(dash)
+library(dashCoreComponents)
+library(dashHtmlComponents)
+library(dashTable)
+library(plotly)
+library(ggplot2)# For plotting
+library(ggthemes)
+library(reshape2)
+library(stats)
+library(fitdistrplus)
+library(ggfortify)
+library(tseries)
+library(rmutil) #for laplace
+library(stats) #for norm,lnorm,t
+library(zoo)
+library(CDFt)
+library(dplyr)
+library(lawstat)
+library(goft)
+#devtools::install_github("jcizel/FredR")
+#library("FredR")
+#library(SMFI5) #for vasicek
+
+
 filteri = function(Data)
   ### Basic Cleaning.
 {
