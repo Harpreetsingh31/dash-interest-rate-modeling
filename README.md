@@ -26,4 +26,4 @@ This R app lets you perform various data analytical operations on the historical
 ![animated](screenshot/probs.gif)
 
 ## PCA_&_Vasicek:
-![animated](screenshot/pca_vas.gif)
+![Image](poster.png)
