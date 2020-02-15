@@ -11,7 +11,7 @@ This R app lets you perform various data analytical operations on the historical
              css only used for bground,dropdown,input,and slider styling)
 
 ## App Layout:
-- First, we have a tab to choose a currency (default USD).
+- First, we have a tab to choose libor_interest_rate currency (default USD).
 - Next, we have Table, 3D, 2D, and Pie chart to give overall picture of that currency dataset. 
 - Then, we have Dash_core_components: Date slider, Dropdown (for tenures/columns), Input (differencing), and a dropdown selector.
 - Finally, we have four data pipeline modules for cleaning, fitting, pca and vasicek simulation.
