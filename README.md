@@ -16,6 +16,10 @@ This R app lets you perform various data analytical operations on the historical
 - Then, we have Dash_core_components: Date slider, Dropdown (for tenures/columns), Input (differencing), and a dropdown selector.
 - Finally, we have four data pipeline modules for cleaning, fitting, pca and vasicek simulation.
 
+##Notes:
+Color matching for various dash components, like tab, sliders, dropdowns took a lot of time.
+
+##Gif Shots
 ## Overall:
 ![animated](screenshot/screencaptured.gif)
 
